@@ -1,0 +1,133 @@
+.footer {
+  padding: 60px 0;
+  background-color: $footer-bg-color;
+}
+
+.footer__container {
+  @include tablet-max {
+    text-align: center;
+  }
+
+  @include tablet-min {
+    display: flex;
+    align-items: baseline;
+  }
+
+  @include tablet-only {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+.footer__address {
+  @include tablet-max {
+    margin-bottom: 60px;
+  }
+}
+
+.address__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include desktop {
+    gap: 9px;
+  }
+}
+
+.address__link {
+  font-style: normal;
+  font-size: $small-text-size;
+  line-height: 1.71;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color $duration $timing-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.address__link--white {
+  color: $primary-text-color;
+}
+
+.footer__socials {
+  @include mobile-max {
+    margin-bottom: 60px;
+  }
+
+  @include desktop {
+    margin-left: 70px;
+  }
+}
+
+.footer__tagline {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: $small-text-size;
+  line-height: 1.14;
+  color: $primary-text-color;
+  text-transform: uppercase;
+}
+
+.footer__subscription {
+  @include tablet-min {
+    min-width: 450px;
+  }
+
+  @include desktop {
+    min-width: 570px;
+    margin-left: auto;
+  }
+}
+
+.subscription__form {
+  @include desktop {
+    display: flex;
+  }
+}
+
+.subscription__input {
+  width: 100%;
+  padding: 15px 16px;
+  color: $primary-text-color;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color $duration $timing-function;
+
+  &::placeholder {
+    font-size: $medium-text-size;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &:focus,
+  &:not(:placeholder-shown) {
+    border-color: $accent-color;
+  }
+}
+
+.subscription__btn {
+  @extend %btn;
+  @include centered-flex(inline-flex);
+  min-width: 200px;
+  height: 50px;
+
+  @include tablet-max {
+    margin-top: 20px;
+  }
+
+  @include desktop {
+    margin-left: 12px;
+  }
+}
+
+.subscription__icon {
+  @include sizes(24px, 24px);
+  margin-left: 10px;
+  fill: currentColor;
+}

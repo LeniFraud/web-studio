@@ -1,0 +1,11 @@
+body {
+  font-family: $page-font, $spare-font;
+  letter-spacing: 0.03em;
+  color: $page-text-color;
+  background-color: $primary-bg-color;
+
+  &.modal-open,
+  &.mobile-open {
+    overflow: hidden;
+  }
+}

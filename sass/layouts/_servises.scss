@@ -1,0 +1,33 @@
+.services__section {
+  display: block;
+  padding-top: 0;
+
+  @include tablet-max {
+    display: none;
+  }
+}
+
+.services__list {
+  display: flex;
+  gap: $base-gap;
+}
+
+.services__item {
+  position: relative;
+}
+
+.services__wrap {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 27px 0;
+  text-align: center;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.services__title {
+  font-size: $small-text-size;
+  line-height: 1.14;
+  color: $primary-title-color;
+  text-transform: uppercase;
+}

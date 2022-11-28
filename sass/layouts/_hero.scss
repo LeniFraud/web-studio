@@ -1,0 +1,64 @@
+.hero {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 118px 0;
+  text-align: center;
+  background-color: #c4c4c4;
+  background-image: $bg-gradient, url('../images/hero-bg-mobile.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include bg-image {
+    background-image: $bg-gradient, url('../images/hero-bg-mobile@2x.jpg');
+  }
+
+  @include tablet-min {
+    background-image: $bg-gradient, url('../images/hero-bg-tablet.jpg');
+
+    @include bg-image {
+      background-image: $bg-gradient, url('../images/hero-bg-tablet@2x.jpg');
+    }
+  }
+
+  @include desktop {
+    background-image: $bg-gradient, url('../images/hero-bg-desktop.jpg');
+
+    @include bg-image {
+      background-image: $bg-gradient, url('../images/hero-bg-desktop@2x.jpg');
+    }
+  }
+
+  @include desktop {
+    padding: 200px 0;
+  }
+}
+
+.hero__title {
+  max-width: 360px;
+  margin: 0 auto 30px;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.62;
+  letter-spacing: 0.06em;
+  color: $primary-title-color;
+  text-transform: uppercase;
+
+  @include desktop {
+    max-width: 700px;
+    font-size: 44px;
+    line-height: 1.36;
+  }
+}
+
+.hero__btn {
+  @extend %btn;
+
+  @include tablet-max {
+    min-width: 200px;
+    height: 50px;
+  }
+  @include desktop {
+    padding: 10px 32px;
+  }
+}

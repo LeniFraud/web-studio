@@ -1,0 +1,197 @@
+.modal {
+  position: relative;
+  background-color: $primary-bg-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  opacity: 1;
+  transform: scale(1);
+  transition: transform $duration $timing-function, opacity $duration $timing-function;
+
+  @include tablet-max {
+    margin: 0 auto;
+  }
+
+  @include mobile-min {
+    max-width: 450px;
+  }
+
+  @include desktop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 528px;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .is-hidden & {
+    opacity: 0;
+    transform: scale(0.4);
+
+    @include desktop {
+      transform: translate(-50%, 80%) scale(0.4);
+    }
+  }
+}
+
+.modal__btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  @include centered-flex();
+  @include sizes(30px, 30px);
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transition: color $duration $timing-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.modal__icon-close {
+  @include sizes(18px, 18px);
+  fill: currentColor;
+}
+
+.modal__form {
+  padding: 40px;
+  text-align: center;
+}
+
+.modal__title {
+  margin-bottom: 12px;
+  font-size: 20px;
+  line-height: 1.5;
+
+  @include desktop {
+    line-height: 1.15;
+  }
+}
+
+.modal__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal__field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: $page-text-color;
+  transition: color $duration $timing-function;
+
+  &:focus-within {
+    color: $accent-color;
+  }
+}
+
+.modal__label {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: $secondary-text-color;
+}
+
+.modal__input {
+  margin: 0;
+  padding: 11px 42px;
+  color: $page-text-color;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color $duration $timing-function;
+
+  &:focus,
+  &:not(:placeholder-shown) {
+    border-color: $accent-color;
+  }
+}
+
+.modal__icon {
+  position: absolute;
+}
+
+.modal__icon--personal {
+  top: 29px;
+  left: 12px;
+  @include sizes(18px, 18px);
+  fill: currentColor;
+
+  .modal__input:not(:placeholder-shown) + & {
+    fill: $accent-color;
+  }
+}
+
+.modal__input--large {
+  padding: 12px 16px;
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.modal__policy {
+  position: relative;
+  @include centered-flex(inline-flex, $align: flex-start);
+  margin-top: 20px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.modal__custom-checkbox {
+  flex-shrink: 0;
+  @include sizes(16px, 15px);
+}
+
+.modal__icon--box {
+  opacity: 1;
+
+  .modal__default-checkbox:checked + .modal__custom-checkbox & {
+    opacity: 0;
+  }
+}
+
+.modal__icon--check {
+  opacity: 0;
+
+  .modal__default-checkbox:checked + .modal__custom-checkbox & {
+    opacity: 1;
+  }
+}
+
+.modal__text {
+  margin-left: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  color: $secondary-text-color;
+
+  @include desktop {
+    font-size: $small-text-size;
+    line-height: 1.71;
+  }
+}
+
+.modal__link {
+  color: $accent-color;
+}
+
+.modal__btn {
+  @extend %btn;
+  min-width: 200px;
+  height: 50px;
+}

@@ -1,0 +1,26 @@
+.header__logo {
+  @extend %logo;
+  padding: 16px 0;
+
+  @include tablet-min {
+    padding: 26px 0;
+  }
+
+  @include desktop {
+    padding: 24px 0;
+    margin-right: 93px;
+  }
+}
+
+.footer__logo {
+  @extend %logo;
+  margin-bottom: 20px;
+}
+
+.logo__text--black {
+  color: $primary-logo-text-color;
+}
+
+.logo__text--white {
+  color: $secondary-logo-text-color;
+}

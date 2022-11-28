@@ -1,0 +1,30 @@
+.socials__list {
+  @include centered-flex();
+  gap: 10px;
+}
+
+.socials__link {
+  @include centered-flex();
+  @include sizes(44px, 44px);
+  color: $svg-base-color;
+  border-radius: 50%;
+  background-color: $primary-bg-color;
+  transition: color $duration $timing-function, background-color $duration $timing-function;
+
+  &:hover,
+  &:focus {
+    color: $primary-text-color;
+    background-color: $accent-color;
+  }
+}
+
+.socials__icon {
+  @include sizes(20px, 20px);
+  fill: currentColor;
+}
+
+.socials__link--white {
+  color: $primary-text-color;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color $duration $timing-function;
+}
